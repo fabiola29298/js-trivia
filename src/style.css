@@ -29,7 +29,7 @@ h1, h2,h3, p{
 
   margin: 30px;
   padding: 30px;
-  background: #00000090;
+  background: #15070e90;
 }
 .main-content img{
   width:  100%;
@@ -59,9 +59,6 @@ h1, h2,h3, p{
   font-weight: 600;
 }
 
-.form input::-webkit-input-placeholder {
-  color: var(--secondary);
-}
 /* Fin de form  */
 
 /* footer   */
@@ -129,6 +126,7 @@ a{
   padding-block: 12px;
   padding-inline: 12px;
   margin-block: 10px;
+  text-align: start;
 }
 
 /* ESTILO DE RESULTADOS   */
