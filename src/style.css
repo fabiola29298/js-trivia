@@ -10,7 +10,7 @@ body{
   background: url("./img/wallpaper.jpg");
   margin: 0;
 }
-h1, h2,h3{
+h1, h2,h3, p{
   color: var(--white40);
 }
 .wrapper{
@@ -78,6 +78,20 @@ a{
   color: var(--white40);
 
 }
-
-
 /* Fin de footer   */
+
+/* ESTILOS DE CATEGORIA */
+.btn-categoria {
+  box-sizing: border-box;
+  border: 1px solid var(--primary);
+  background-color: var(--primary);
+  width: 100%;
+  font-size: 16px;
+  border-radius: 90px;
+  padding-block: 12px;
+  padding-inline: 12px;
+  margin-block: 10px;
+}
+.a-categoria{
+  margin-block-start: 50px;
+}
