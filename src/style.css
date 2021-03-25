@@ -130,3 +130,23 @@ a{
   padding-inline: 12px;
   margin-block: 10px;
 }
+
+/* ESTILO DE RESULTADOS   */
+  .grupo-resultados{
+  box-sizing: border-box;
+  border: 1px solid var(--grey50);
+  background-color: var(--grey40);
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 6px;
+  margin-block: 6px;
+}
+.rp-correcto{
+  border: 3px solid #006600;
+  background-color: #4ca64c;
+}
+.rp-incorrecto{
+  border: 3px solid #b20000;
+  background-color: #ff4c4c;
+}
