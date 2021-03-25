@@ -1,0 +1,83 @@
+
+:root {
+    --primary: #ae1a28;
+    --secondary: #15070e;
+    --grey40: #94A1B2;
+    --white40: #FFFFFE;
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: url("./img/wallpaper.jpg");
+  margin: 0;
+}
+h1, h2,h3{
+  color: var(--white40);
+}
+.wrapper{
+  display: grid;
+  place-items: center;
+}
+.main-content{
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  margin: 30px;
+  padding: 30px;
+  background: #00000090;
+}
+.main-content img{
+  width:  100%;
+}
+
+/* form  */
+
+.form{
+  display: block;
+}
+.form input {
+  box-sizing: border-box;
+  border: 1px solid var(--grey40);
+  width: 100%;
+  font-size: 16px;
+  border-radius: 90px;
+  padding-block: 12px;
+  padding-inline: 12px;
+  margin-block-start: 20px;
+}
+
+.form input[type="submit"] {
+  width: 100%;
+  background:  var(--primary);
+  border: 1px solid var(--primary);
+  color: var(--white40);
+  font-weight: 600;
+}
+
+.form input::-webkit-input-placeholder {
+  color: var(--secondary);
+}
+/* Fin de form  */
+
+/* footer   */
+.footer{
+  width:100%;
+  text-align: center;
+  margin-block-start: 20px;
+}
+.footer p{
+  color: var(--white40);
+  font-size: 12px;
+
+}
+a{
+  color: var(--white40);
+
+}
+
+
+/* Fin de footer   */
