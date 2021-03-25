@@ -13,15 +13,37 @@
 
 
 <body>
+
+    <header class="header">
+      <div class="grupo-header">
+        <p>Categoría: </p>
+        <p id="categoria-header">Novato</p>
+      </div>
+      <div class="grupo-header">
+        <p>Contador: </p>
+        <div class="contador-header"><p>00:00</p></div>
+      </div>
+      <div class="grupo-header">
+        <img src="./img/user.svg" alt="deadpool">
+        <p id="usuario-header">Anonimo</p>
+      </div>
+    </header>
+
     <main class="main">
     <div class="wrapper">
       <div class="main-content">
-        <h1>Bienvenido a la trivia de</h1>
-        <img src="./src/img/Wandavision_01.png" alt="Logo de Wanda Vision">
-        <h3>Ingresa tu nombre</h3>
+        <p>Pregunta 2/3</p>
+        <h3>¿En qué película comenzó la historia de amor de Wanda y Vision?</h3>
+        <div class="respuesta-card">
+          <p class="respuesta"> A. Iron Man</p>
+          <p class="respuesta">B. Avengers Infinty War</p>
+          <p class="respuesta">C. Avenger: la era de Ultron</p>
+          <p class="respuesta">D. Doctor Strange</p>
+        </div>
+        <button class="btn-categoria">Siguiente</button>
         <form action="./resultados.html" class="form">
-          <input type="text" required placeholder="Nombre">
-          <input type="submit" value="Siguiente">
+
+           <input type="submit" value="Siguiente">
         </form>
       </div>
     </div>

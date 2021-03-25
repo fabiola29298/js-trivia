@@ -2,7 +2,8 @@
 :root {
     --primary: #ae1a28;
     --secondary: #15070e;
-    --grey40: #94A1B2;
+    --grey40: #666666;
+    --grey50: #999999;
     --white40: #FFFFFE;
 }
 body{
@@ -94,4 +95,38 @@ a{
 }
 .a-categoria{
   margin-block-start: 50px;
+}
+
+/* ESTILOS DE PREGUNTAS */
+.header{
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  padding-block: 16px;
+
+}
+.grupo-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.grupo-header p{
+  margin-block: 0;
+}
+.header img{
+  height: 30px;
+}
+.respuesta{
+  box-sizing: border-box;
+  border: 1px solid var(--grey50);
+  background-color: var(--grey40);
+  width: 100%;
+  font-size: 16px;
+  border-radius: 8px;
+  padding-block: 12px;
+  padding-inline: 12px;
+  margin-block: 10px;
 }
