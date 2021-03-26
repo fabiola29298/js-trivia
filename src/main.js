@@ -13,7 +13,7 @@
     localStorage.setItem("nombre-usuario", nombre);
     console.log(nombre);
 
-    window.location.href='../src/categorias.html';
+    location.href='../src/categorias.html';
 
 
   });

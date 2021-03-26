@@ -109,7 +109,7 @@ btnSiguiente.addEventListener('click', () => {
       //Gurdar puntaje y array de las preguntas
       localStorage.setItem("preguntasGeneral", JSON.stringify(preguntasGeneral));
       localStorage.setItem("sumatoriaPuntos", sumatoriaPuntos);
-      window.location.href = './resultados.html';
+      location.href = './resultados.html';
     }
   }
 
