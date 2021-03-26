@@ -107,7 +107,7 @@ btnSiguiente.addEventListener('click', () => {
     else {
       // console.log(preguntasGeneral);
       //Gurdar puntaje y array de las preguntas
-      localStorage.setItem("preguntasGeneral", preguntasGeneral);
+      localStorage.setItem("preguntasGeneral", JSON.stringify(preguntasGeneral));
       localStorage.setItem("sumatoriaPuntos", sumatoriaPuntos);
       window.location.href = './resultados.html';
     }

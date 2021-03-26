@@ -18,27 +18,13 @@
       <div class="main-content">
         <img src="./img/Wandavision_01.png" alt="Logo de Wanda Vision">
         <h1>Resultados</h1>
-        <h3>4/6</h3>
+        <h3><span id="puntaje"></span>/6</h3>
         <h3>Respuestas:</h3>
-        <div class="grupo-resultados">
-          <p class="card-pregunta-resultados">
-            ¿En qué película comenzó la historia de amor de Wanda y Vision?</p>
-          <p class="card-respuesta-resultados">Doctor Strange</p>
-        </div>
-        <div class="grupo-resultados rp-correcto">
-          <p class="card-pregunta-resultados">
-            ¿En qué película comenzó la historia de amor de Wanda y Vision?</p>
-          <p class="card-respuesta-resultados">Doctor Strange</p>
-        </div>
-        <div class="grupo-resultados rp-incorrecto">
-          <p class="card-pregunta-resultados">
-            ¿En qué película comenzó la historia de amor de Wanda y Vision?</p>
-          <p class="card-respuesta-resultados">Doctor Strange</p>
-        </div>
+        <div id="grupo-pregunta"></div>
         <h3>Vuelve a jugar</h3>
-        <button class="btn-categoria"><a href="./preguntas.html">Categoría Novato</a></button>
-        <button class="btn-categoria"><a href="./preguntas.html">Categoría Fandom</a></button>
-        <!-- <a href="../index.html"><button class="btn-categoria">Siguiente</button></a> -->
+        <button type="button" class="btn-red" id="btnNovato">Categoría Novato</button>
+        <button type="button" class="btn-red" id="btnFandom">Categoría Fandom</button>
+ <!-- <a href="../index.html"><button class="btn-categoria">Siguiente</button></a> -->
         <a class="a-categoria" href="../index.html">Cambiar de nombre</a>
       </div>
     </div>
@@ -51,7 +37,7 @@
 
   </footer>
 
-
+  <script src="./resultados.js"></script>
 </body>
 
 </html>
