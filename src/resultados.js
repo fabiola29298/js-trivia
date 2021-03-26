@@ -35,9 +35,9 @@ mostrarResultados();
 
 btnNovato.addEventListener('click', () => {
   localStorage.setItem("categoria", "Novato");
-  location.href = '../src/preguntas.html';
+  location.href = './preguntas.html';
 });
 btnFandom.addEventListener('click', () => {
   localStorage.setItem("categoria", "Fandom");
-  location.href = '../src/preguntas.html';
+  location.href = './preguntas.html';
 });
