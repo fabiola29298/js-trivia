@@ -30,6 +30,6 @@ Siguiendo el bootcamp de [Laboratoria - Frontend Developer](https://www.laborato
 
 ![image](/src/img/preview2.jpg)
 ##
-![image](/src/img/preview3.jpg)
+![image](/src/img/preview1.jpg)
 ##
 
