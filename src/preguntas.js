@@ -1,5 +1,5 @@
 let preguntasGeneral ='';
-let numeroPregunta = 1;
+let numeroPregunta = 0;
 let preguntaActual;
 let res = document.querySelector('#cuestionario-content');
 const btnSiguiente = document.querySelector('#btn-siguiente');
@@ -33,7 +33,7 @@ function traerDatos(){
       preguntaActual = preguntasGeneral[0];
 
       mostrarUnaPregunta(preguntaActual);
-
+      numeroPregunta++;
     }
   }
 
@@ -64,6 +64,29 @@ function mostrarUnaPregunta(cuestionario){
       `;
 
 }
+function revisarPregunta() {
+  // si es la ultima pregunta cambiar de texto el boton
+  if (numeroPregunta === 6) {
+    btnSiguiente.innerText = "Finalizar preguntas";
+  }
+  // guardar respuesta
+  preguntasGeneral[numeroPregunta - 1].respUsuario = preguntaActual.respuestas[flag];
+
+  // revisar si es la respuesta correcta
+  if (preguntaActual.respuestas[flag] === preguntaActual.respuestaCorrecta) {
+    sumatoriaPuntos++;
+
+    // guardar si esta correcta o no
+    preguntasGeneral[numeroPregunta - 1].flag = true;
+  }
+  else {
+    preguntasGeneral[numeroPregunta - 1].flag = false;
+  }
+  // console.log(preguntasGeneral[numeroPregunta - 2]);
+
+
+
+}
 
 agregarNombre();
 traerDatos();
@@ -75,34 +98,16 @@ btnSiguiente.addEventListener('click', () => {
     alert("Selecciona una opcion :v");
   }
   else{
-    // si es la ultima pregunta cambiar de texto el boton
-    if (numeroPregunta === 6) {
-      btnSiguiente.innerText = "Finalizar preguntas";
-    }
-    // guardar respuesta
-    preguntasGeneral[numeroPregunta - 1].respUsuario = preguntaActual.respuestas[flag];
 
-    // revisar si es la respuesta correcta
-    if (preguntaActual.respuestas[flag] === preguntaActual.respuestaCorrecta) {
-      sumatoriaPuntos++;
-
-      // guardar si esta correcta o no
-      preguntasGeneral[numeroPregunta - 1].flag = true;
-    }
-    else {
-      preguntasGeneral[numeroPregunta - 1].flag = false;
-    }
-    // console.log(preguntasGeneral[numeroPregunta - 2]);
-
+    revisarPregunta();
     // guardar la pregunta actual
-    preguntaActual = preguntasGeneral[numeroPregunta - 1];
-
+    preguntaActual = preguntasGeneral[numeroPregunta];
     if (numeroPregunta < preguntasGeneral.length) {
+      mostrarUnaPregunta(preguntaActual);
       numeroPregunta++;
 
       // cambiar de pregunta
       flag = null;
-      mostrarUnaPregunta(preguntaActual);
     }
     else {
       // console.log(preguntasGeneral);

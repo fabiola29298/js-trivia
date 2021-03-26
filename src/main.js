@@ -4,7 +4,10 @@
 
   // Inicializa el juego
   const inicializarJuego = () => {
-     nombre='';
+    localStorage.setItem("nombre-usuario", "Anónimo");
+    localStorage.setItem("categoria", "Novato");
+    localStorage.setItem("preguntasGeneral", "");
+    localStorage.setItem("sumatoriaPuntos", "0");
 
   };
 
@@ -17,3 +20,5 @@
 
 
   });
+
+inicializarJuego();

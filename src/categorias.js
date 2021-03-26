@@ -1,6 +1,14 @@
 
 const btnNovato = document.querySelector('#btnNovato');
 const btnFandom = document.querySelector('#btnFandom');
+// Inicializa el juego
+const inicializarJuego = () => {
+  // localStorage.setItem("nombre-usuario", "Anónimo");
+  localStorage.setItem("categoria", "Novato");
+  localStorage.setItem("preguntasGeneral", "");
+  localStorage.setItem("sumatoriaPuntos", "0");
+
+};
 
 function agregarNombre() {
   console.log(localStorage.getItem("nombre-usuario"));
@@ -8,6 +16,7 @@ function agregarNombre() {
 };
 
 agregarNombre();
+inicializarJuego();
 
 
 btnNovato.addEventListener('click', () => {
