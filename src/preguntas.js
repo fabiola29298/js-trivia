@@ -1,30 +1,10 @@
-
-class Cuestionario {
-  //propiedades de clase
-  pregunta = '';
-  respuestas = [];
-  respuestaCorrecta = '';
-  constructor(pregunta, respuestas, respuestaCorrecta) {
-    this.pregunta = pregunta;
-    this.respuestas = respuestas;
-    this.respuestaCorrecta = respuestaCorrecta;
-  }
-
-  verificar(opcion) {
-    if(opcion === this.respuestaCorrecta){
-      return true;
-    }
-    else{
-      return false;
-    }
-  }
-}
-
 let preguntasGeneral ='';
 let numeroPregunta = 1;
+let preguntaActual;
 let res = document.querySelector('#cuestionario-content');
 const btnSiguiente = document.querySelector('#btn-siguiente');
-
+let flag = null;//Bandera para seleccionar solo una opcion
+let sumatoriaPuntos=0;
 function agregarNombre() {
   console.log(localStorage.getItem("nombre-usuario"));
   document.getElementById("usuario-header").innerHTML   = localStorage.getItem("nombre-usuario");
@@ -42,27 +22,33 @@ function traerDatos(){
   xhttp.onreadystatechange = function (){
     if(this.readyState == 4 && this.status ==200){
       let datos = JSON.parse(this.responseText);
-      preguntasGeneral = datos;
-      mostrarUnaPregunta(preguntasGeneral[0]);
-      // console.log(datos);
-      // let limite = escogerCategoria();
-      // let i = 0;
-      // while(i<datos.lenth){
-      //   delete datos[i];
-      //   i++;
-      // }
-      // datos.forEach(dato => {
+      // editar la copia segun categoria
+      if ('Novato' === localStorage.getItem("categoria")) {
+        preguntasGeneral = datos.splice(0, 6);
+      } else {
+        preguntasGeneral = datos.splice(5, 6);
+      }
+      console.log(preguntasGeneral);
+      // guardar la pregunta actual
+      preguntaActual = preguntasGeneral[0];
 
-      //   res.innerHTML += `
-      //      <p>${dato}</p>
-      //      <p>${dato.pregunta}</p>
-      //      <p>${dato.preguntaCorrecta}</p>
-      //     `;
-      // });
-
+      mostrarUnaPregunta(preguntaActual);
 
     }
   }
+
+}
+function clickOpcion(id){
+  if(flag ==null){
+    document.getElementById("opcion" + id).style.backgroundColor = "#15070e";
+    flag=id;
+  }else{
+    document.getElementById("opcion" + flag).style.backgroundColor = "#666666";
+    document.getElementById("opcion" + id).style.backgroundColor = "#15070e";
+    flag = id;
+  }
+
+
 
 }
 function mostrarUnaPregunta(cuestionario){
@@ -70,74 +56,31 @@ function mostrarUnaPregunta(cuestionario){
         <p>Pregunta ${numeroPregunta}/6</p>
         <h3>${cuestionario.pregunta}</h3>
         <div class="respuesta-card">
-          <p class="respuesta">A. ${cuestionario.respuestas[0]}</p>
-          <p class="respuesta">B. ${cuestionario.respuestas[1]}</p>
-          <p class="respuesta">C. ${cuestionario.respuestas[2]}</p>
-          <p class="respuesta">D. ${cuestionario.respuestas[3]}</p>
+          <p value="0" class="respuesta" id="opcion0" onclick="clickOpcion(0)" >A. ${cuestionario.respuestas[0]}</p>
+          <p value="1" class="respuesta" id="opcion1" onclick="clickOpcion(1)" >B. ${cuestionario.respuestas[1]}</p>
+          <p value="2" class="respuesta" id="opcion2" onclick="clickOpcion(2)" >C. ${cuestionario.respuestas[2]}</p>
+          <p value="3" class="respuesta" id="opcion3" onclick="clickOpcion(3)" >D. ${cuestionario.respuestas[3]}</p>
         </div>
       `;
-
-}
-function escogerCategoria(){
-
-  // let res = document.querySelector('#prueba');
-  // res.innerHTML = '';
-  // console.log(preguntasGeneral);
-
-  if ('Novato' === localStorage.getItem("categoria")){
-    console.log('novato');
-    return 0;
-  }else{
-    console.log('fandmo');
-    return 5;
-  }
-
-  // for (let item of preguntasGeneral) {
-  //   console.log(item);
-  //   // let pregunta = new Cuestionario(item.pregunta, item.respuestas, item.respuestaCorrecta);
-  //   res.innerHTML += `
-  //    <p>${item}</p>
-  //    <p>${item.pregunta}</p>
-  //    <p>${item.preguntaCorrecta}</p>
-  //   `;
-
-  // }
-
-
-}
-function mostrarAlgo(dato, res){
-  // console.log(dato);
-
-
-
-
-}
-function mostrarPreguntas(inicial){
-  // console.log(preguntasGeneral);
-  // preguntasGeneral.forEach(function(pregunta){
-  //   console.log('pregunta'+ pregunta);
-  // });
-
-  // console.log(preguntasGeneral);
-  // for( let i=inicial; i<(inicial+6); i++ ){
-  //   // let preguntaIndividual = new Cuestionario();
-  //   // let preguntaIndividual =[];
-  //   let preguntaIndividual = preguntasGeneral[i];
-  //   // preguntaIndividual = preguntasGeneral[i];
-  //   console.log(preguntasGeneral[i].pregunta);
-  //   console.log(preguntaIndividual);
-  // }
-
 
 }
 
 agregarNombre();
 traerDatos();
-escogerCategoria();
+
+
 btnSiguiente.addEventListener('click', () => {
   if (numeroPregunta < preguntasGeneral.length){
     numeroPregunta++;
-    mostrarUnaPregunta(preguntasGeneral[numeroPregunta-1]);
+    // revisar si es la respuesta correcta
+    if (preguntaActual.respuestas[flag] === preguntaActual.respuestaCorrecta){
+        sumatoriaPuntos++;
+    }
+
+    // guardar la pregunta actual
+    preguntaActual = preguntasGeneral[numeroPregunta - 1];
+    // cambiar de pregunta
+    mostrarUnaPregunta(preguntaActual);
   }
   else{
     alert("Fin de preguntas");
