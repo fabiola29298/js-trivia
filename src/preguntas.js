@@ -6,7 +6,7 @@ const btnSiguiente = document.querySelector('#btn-siguiente');
 let flag = null;//Bandera para seleccionar solo una opcion
 let sumatoriaPuntos=0;
 function agregarNombre() {
-  console.log(localStorage.getItem("nombre-usuario"));
+  // console.log(localStorage.getItem("nombre-usuario"));
   document.getElementById("usuario-header").innerHTML   = localStorage.getItem("nombre-usuario");
   document.getElementById("categoria-header").innerHTML = localStorage.getItem("categoria");
 };
@@ -28,7 +28,7 @@ function traerDatos(){
       } else {
         preguntasGeneral = datos.splice(5, 6);
       }
-      console.log(preguntasGeneral);
+      // console.log(preguntasGeneral);
       // guardar la pregunta actual
       preguntaActual = preguntasGeneral[0];
 
@@ -70,19 +70,47 @@ traerDatos();
 
 
 btnSiguiente.addEventListener('click', () => {
-  if (numeroPregunta < preguntasGeneral.length){
-    numeroPregunta++;
-    // revisar si es la respuesta correcta
-    if (preguntaActual.respuestas[flag] === preguntaActual.respuestaCorrecta){
-        sumatoriaPuntos++;
+  // si no escogieron ninguna opcion
+  if(flag==null){
+    alert("Selecciona una opcion :v");
+  }
+  else{
+    // si es la ultima pregunta cambiar de texto el boton
+    if (numeroPregunta === 6) {
+      btnSiguiente.innerText = "Finalizar preguntas";
     }
+    // guardar respuesta
+    preguntasGeneral[numeroPregunta - 1].respUsuario = preguntaActual.respuestas[flag];
+
+    // revisar si es la respuesta correcta
+    if (preguntaActual.respuestas[flag] === preguntaActual.respuestaCorrecta) {
+      sumatoriaPuntos++;
+
+      // guardar si esta correcta o no
+      preguntasGeneral[numeroPregunta - 1].flag = true;
+    }
+    else {
+      preguntasGeneral[numeroPregunta - 1].flag = false;
+    }
+    // console.log(preguntasGeneral[numeroPregunta - 2]);
 
     // guardar la pregunta actual
     preguntaActual = preguntasGeneral[numeroPregunta - 1];
-    // cambiar de pregunta
-    mostrarUnaPregunta(preguntaActual);
+
+    if (numeroPregunta < preguntasGeneral.length) {
+      numeroPregunta++;
+
+      // cambiar de pregunta
+      flag = null;
+      mostrarUnaPregunta(preguntaActual);
+    }
+    else {
+      // console.log(preguntasGeneral);
+      //Gurdar puntaje y array de las preguntas
+      localStorage.setItem("preguntasGeneral", preguntasGeneral);
+      localStorage.setItem("sumatoriaPuntos", sumatoriaPuntos);
+      window.location.href = './resultados.html';
+    }
   }
-  else{
-    alert("Fin de preguntas");
-  }
+
 });
