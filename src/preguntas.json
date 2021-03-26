@@ -1,0 +1,125 @@
+[
+
+    {
+      "pregunta":"¿En qué película comenzó la historia de amor de Wanda y Vision?",
+      "respuestas":[
+        "Iron Man",
+        "Avengers Infinty War",
+        "Avenger: la era de Ultron",
+        "Doctor Strange"
+      ],
+      "respuestaCorrecta":"Avengers Infinty War"
+    },
+    {
+      "pregunta": "WandaVision es la primera serie de TV salida del Universo Cinematográfico de Marvel. ¿A qué otra serie le quitó ese título?",
+      "respuestas": [
+        "The Falcon and the Winter Soldier",
+        "The Eternals",
+        "Loki",
+        "What If?"
+      ],
+      "respuestaCorrecta": "The Falcon and the Winter Soldier"
+    },
+    {
+      "pregunta": "El primer episodio de la serie WandaVision fue realmente especial para sus protagonistas porque.",
+      "respuestas": [
+        "Se rodó en la pandemia",
+        "Se hizo en blanco y negro",
+        "Tuvo público en vivo durante su rodaje",
+        "Se hizo en plano secuencia"
+      ],
+      "respuestaCorrecta": "Tuvo público en vivo durante su rodaje"
+    },
+    {
+      "pregunta": "La serie le rinde homenaje a las comedias clásicas, pero una de sus mayores referencias es:",
+      "respuestas": [
+        "El show de Bill Cosby",
+        "The Golden Girls",
+        "Mad About You",
+        "El show de Dick Van Dyke"
+      ],
+      "respuestaCorrecta": "El show de Dick Van Dyke"
+    },
+    {
+      "pregunta": "En algunos episodios de la serie se ven comerciales que hace referencia a:",
+      "respuestas": [
+        "Stan Lee",
+        "El Capitán América",
+        "Hydra",
+        "Los X-Men"
+      ],
+      "respuestaCorrecta": "Hydra"
+    },
+    {
+      "pregunta": "¿El tercer episodio ‘a color’ de la serie marca un antes y un después porque?",
+      "respuestas": [
+        "Wanda es madre",
+        "Descubren la identidad de Vision",
+        "Geraldine revela datos acerca del hermano de Wanda",
+        "Se revela que existe un portal a otra realidad"
+      ],
+      "respuestaCorrecta": "Geraldine revela datos acerca del hermano de Wanda"
+    },
+    {
+      "pregunta": "Agnes y Herb son importantes en la serie por",
+      "respuestas": [
+        "Ser los vecinos entrometidos de la pareja protagonista",
+        "Ser familiares de Wanda",
+        "Ser fantasmas",
+        "Ser espías"
+      ],
+      "respuestaCorrecta": "Ser los vecinos entrometidos de la pareja protagonista"
+    },
+    {
+      "pregunta": "¿Quién aparece en el cuarto episodio de WandaVision?",
+      "respuestas": [
+        "Capitana Marvel",
+        "Nick Fury",
+        "Mónica Rambeau",
+        "Bill Bixty"
+      ],
+      "respuestaCorrecta": "Mónica Rambeau"
+    },
+    {
+      "pregunta": "El personaje de Darcy Lewis ayuda a resolver un poco los misterios de WandaVision. Ella es recordada por:",
+      "respuestas": [
+        "Ser pieza fundamental de S.H.I.E.LD.",
+        "Ser parte de la película de Thor",
+        "Ser la mejor amiga de Bruce Banner",
+        "Ser agente encubierto de Hydra"
+      ],
+      "respuestaCorrecta": "Ser parte de la película de Thor"
+    },
+    {
+      "pregunta": "Por ahora, ¿qué papel cumple la organización SWORD?",
+      "respuestas": [
+        "Cuidar a los hijos de Wanda y Vision",
+        "Monitorear lo que pasa en Westview",
+        "Hacerle competencia a las empresas Stark",
+        "Luchar contra el poder de Wanda y Vision"
+      ],
+      "respuestaCorrecta": "Monitorear lo que pasa en Westview"
+    },
+    {
+      "pregunta": "En el sexto episodio de la serie le rinden homenaje a",
+      "respuestas": [
+        "La comedia Blanco y Negro",
+        "Malcolm in the Middle",
+        "Automan",
+        "Melrose Place"
+      ],
+      "respuestaCorrecta": "Malcolm in the Middle"
+    },
+    {
+      "pregunta": "Una de las sorpresas de la trama es que:",
+      "respuestas": [
+        "Mephisto es uno de los niños",
+        "Pietro odia a su hermana",
+        "Wanda  controla del todo la realidad en que vive",
+        "Vision no es en realidad el androide que todos conocemos"
+      ],
+      "respuestaCorrecta": "Wanda  controla del todo la realidad en que vive"
+    }
+
+
+  ]
