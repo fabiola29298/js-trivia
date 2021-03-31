@@ -16,7 +16,8 @@
     localStorage.setItem("nombre-usuario", nombre);
     console.log(nombre);
 
-    location.href='../src/categorias.html';
+    location.href ='https://fabiola29298.github.io/js-trivia/src/categorias.html';
+    // location.href='./src/categorias.html';
 
 
   });
