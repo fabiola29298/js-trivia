@@ -3,6 +3,9 @@ let numeroPregunta = 0;
 let preguntaActual;
 let res = document.querySelector('#cuestionario-content');
 const btnSiguiente = document.querySelector('#btn-siguiente');
+let contadorView = document.querySelector('#contador-header');
+const MILLISECONDS_OF_A_SECOND = 1000;
+let contadorNumber = 15;
 let flag = null;//Bandera para seleccionar solo una opcion
 let sumatoriaPuntos=0;
 function agregarNombre() {
@@ -88,9 +91,29 @@ function revisarPregunta() {
 
 }
 
+function comenzarContador(){
+  if(contadorNumber == 0){
+    contadorNumber=15;
+    alert("Termino el tiempo. Vuelve a comenzar :v");
+    location.href = '../src/preguntas.html';
+  }else{
+    contadorNumber -= 1;
+  }
+
+  // visualizar numeros
+  if(contadorNumber<10){
+
+    contadorView.innerHTML = `<p>00:0${contadorNumber}</p>`;
+  }
+  else{
+    contadorView.innerHTML = `<p>00:${contadorNumber}</p>`;
+  }
+
+}
+
 agregarNombre();
 traerDatos();
-
+setInterval(comenzarContador, MILLISECONDS_OF_A_SECOND);
 
 btnSiguiente.addEventListener('click', () => {
   // si no escogieron ninguna opcion
@@ -98,7 +121,7 @@ btnSiguiente.addEventListener('click', () => {
     alert("Selecciona una opcion :v");
   }
   else{
-
+    // comenzar de nuevo el contador
     revisarPregunta();
     // guardar la pregunta actual
     preguntaActual = preguntasGeneral[numeroPregunta];
@@ -116,6 +139,7 @@ btnSiguiente.addEventListener('click', () => {
       localStorage.setItem("sumatoriaPuntos", sumatoriaPuntos);
       location.href = './resultados.html';
     }
+    contadorNumber = 15;
   }
 
 });
