@@ -1,15 +1,25 @@
 
 # Trivia - Etapa 0
-**"Trivia"** es una página web donde el usuario registra su nombre, hay dos categorías y cada categoría tiene 6 preguntas. Al final se muestra el resultado y una opción para volver a jugar.
+
+**"Trivia sobre WandaVision"** es una página web donde pones a prueba tus conocimientos sobre la serie de Marvel. Para comenzar el usuario registra su nombre, escoge entre dos categorías, cada categoría tiene 6 preguntas. Al final se muestra el resultado, respuestas correctas e incorrectas y una opción para volver a jugar.
+## Aprendizajes nuevos
+
+* Obtener datos .json con `XMLHttpRequest`.
+* Insertar el código HTML con `innerHTML`.
+* Mostrar cuenta regresiva con `setInterval()`.
+* Acceder al objeto local Storage para almacenar el nombre, la categoría y las respuestas del usuario.
+* `localStorage` solo guarda variables string entonces para almacenar arrays utilicé `JSON.parse` y `JSON.stringify`.
 
 ## Tecnología usada
 
-* Html
-* Css
-* Javascript
+* HTML
+* CSS
+* JavaScript
 * <div>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-Siguiendo el bootcamp de [Laboratoria - Frontend Developer](https://www.laboratoria.la/)
+Este proyecto es parte de la ruta del bootcamp de [Laboratoria - Frontend Developer](https://www.laboratoria.la/). Estoy siguiendo esta ruta de forma personal y autodidacta para aprender en base a proyectos.
+
+
 <div align="center">
   <h3>
     <a href="https://fabiola29298.github.io/js-trivia/">
